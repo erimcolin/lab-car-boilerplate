@@ -122,11 +122,11 @@ body > div:nth-child(2) > div > div > div{
 .border-white{
   border: 1px solid white;
   height: 60vh;
-  margin: 5vh 0;
+  margin: 3vh 0 ;
 }
 
 #cellphone > div > div > div.col-md-5.col-md-offset-1 > img{
-  height: 50vh;
+  height: 45vh;
   margin-top: 1.2em;
 }
 
@@ -144,10 +144,17 @@ body > div:nth-child(2) > div > div > div{
   font-size: 1.3em;
 }
 
+body > div > div > div > p{
+  background-color: #f7b617;
+  margin-top: -23px;
+  margin-bottom: 0;
+  color: white;
+}
+
 /* seccion conduce cuando quieras */
 #second-jumbotron{
-  opacity: 0.5;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: black; */
   border-radius: 0;
   color: white;
 }
