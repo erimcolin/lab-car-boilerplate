@@ -6,30 +6,12 @@
 maximum-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/main.css">
     <title>Lab-ar</title>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v3"></script>
   </head>
   <body>
-    <!-- menu nav -->
-    <!-- <nav class="navbar navbar-default ">
-        <div class="container-fluid">
-          Brand and toggle get grouped for better mobile display
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-              <img class="col-md-offset-3" src="assets/images/logoForma.png" alt="logotipo" width="100px">
-            </a>
-          </div>
-          Collect the nav links, forms, and other content for toggling
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Viaja</a></li>
-              <li><a href="#">Conduce</a></li>
-              <li><a href="#">Inicia Sesión</a></li>
-            </ul>
-          </div> /.navbar-collapse
-        </div> /.container-fluid
-    </nav> -->
-
     <nav class="navbar navbar-inverse">
          <div class="container-fluid">
               <div class="navbar-header">
@@ -44,26 +26,140 @@ maximum-scale=1">
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Viaja</a></li>
                     <li><a href="#">Conduce</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><button class="btn btn-default btn-lg" data-toggle="modal" data-target="#miModal">Inicia Sesión</button></li>
                   </ul>
+                </div>
+                <!-- modal inicia sesion -->
+                <div class="modal fade" id="miModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-md-6 col-md-offset-3">
+                            <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+                              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 col-md-offset-3">
+                            <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                              <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-5 col-md-offset-5 col-xs-4 col-xs-offset-5">
+                            <button class="btn btn-warning btn-lg">Login</button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 col-md-offset-3">
+                            <p>Forgot Password? <a href="#">Click Here</a> </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer"></div>
+                    </div>
+                  </div>
                 </div>
             </div>
       </nav>
-
-
-
     <!-- seccion formulario registro -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 image">
           <div class="row">
-            <div class="col-md-7 col-md-offset-5">
-              <div id="first-jumbotron" class="jumbotron col-md-9 col-md-offset-3">
-                <h2 class="">Disfruta del viaje<br>Eres dueño de tu tiempo</h2>
-                <p>Viaja con <img src="assets/images/logoBlanco.png" alt="logotipo"></p>
-                <p><a class="btn btn-default btn-lg" href="#" role="button">REGISTRATE</a></p>
-                <p id="hr"><hr> </p>
-                <p><a class="btn btn-default btn-lg" href="#" role="button">Conviertete en un conductor</a></p>
+            <div class="col-md-7 col-md-offset-5 col-sm-7 col-sm-offset-5">
+              <div id="first-jumbotron" class="jumbotron col-md-9 col-md-offset-3 col-sm-9 col-sm-offset-3">
+                <h2 class="hidden-xs">Disfruta del viaje<br>Eres dueño de tu tiempo</h2>
+                <h2 class="visible-xs">Comienza a viajar</h2>
+                <p class="hidden-xs">Viaja con <img src="assets/images/logoBlanco.png" alt="logotipo"></p>
+                <p class="visible-xs">con <img src="assets/images/logoBlanco.png" alt="logotipo"></p>
+                <p><button class="btn btn-default btn-lg bold hidden-xs" data-toggle="modal" data-target="#miModal2">REGISTRATE</button></p>
+    <!-- modal registrate -->
+                <div class="modal fade color" id="miModal2">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header back">
+                        <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <button class="btn btn-warning btn-lg btn-block text-center">Ya tienes una cuenta?</button>
+                          <span id="helpBlock" class="help-block text-center">O CREA UNA CUENTA NUEVA</span>
+                          <form class="form-inline">
+                            <div class="form-group">
+                              <label class="sr-only" for="exampleInputEmail3">Nombre</label>
+                              <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="exampleInputPassword3">Apellido</label>
+                              <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Apellido">
+                            </div>
+                          </form>
+                          <form class="form-horizontal">
+                            <div class="form-group">
+                              <div class="col-sm-12">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Correo Electrónico: ejemplo@correo.mx">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="Teléfono">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-12">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="Ciudad">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="(Opcional) Código de Invitación">
+                              </div>
+                            </div>
+                            <!-- Single button -->
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cómo te enteraste de nosotros?<span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Internet</a></li>
+                                <li><a href="#">Redes Sociales</a></li>
+                                <li><a href="#">Televisión</a></li>
+                                <li><a href="#">Otro</a></li>
+                              </ul>
+                            </div>
+                            <button class="btn btn-info btn-lg btn-block" data-dismiss="modal">ENVIAR</button>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-sm-4">
+                    <hr class="hidden-xs">
+                  </div>
+                  <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1">
+                    <p class="hidden-xs">o bien</p>
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                    <hr class="hidden-xs">
+                  </div>
+                </div>
+                <p><a class="btn btn-default btn-md hidden-xs" href="#" role="button">Conviertete en un conductor</a></p>
+                <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default visible-xs">Descarga el app</button>
+                </div>
               </div>
             </div>
           </div>
@@ -71,10 +167,11 @@ maximum-scale=1">
       </div>
       <!-- seccion celular -->
       <div id="cellphone" class="row background">
-        <div class="col-md-10 back">
+        <div class="col-md-10 col-sm-10 border-white">
           <div class="row">
-            <div class="col-md-5 col-md-offset-1">
-              <img class="img-responsive" src="assets/images/iphone6Plus.png" alt="iphone">
+            <div class="col-md-5 col-md-offset-1 col-sm-5">
+              <h2 class="visible-xs text-center">La nueva app</h2>
+              <img class="img-responsive" src="assets/images/iphone6Plus.png" alt="iphone" class="img-thumbnail">>
             </div>
             <div class="col-md-4">
               <h3>Descarga la nueva app</h3>
@@ -83,13 +180,18 @@ maximum-scale=1">
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <p class="visible-xs">Llega a tu destino aún más rápido</p>
+          </div>
+        </div>
       </div>
       <!-- seccion conduce cuando quieras -->
       <div id="drive" class="row">
         <div class="col-md-12 background-image">
           <div class="row">
             <div class="col-md-4 col-md-offset-8">
-              <div class="jumbotron">
+              <div id="second-jumbotron" class="jumbotron">
                 <p class="">Conduce cuando quieras</p>
                 <p>LabCar es una opción flexible para alcanzar tus metas financieras</p>
                 <p><a class="btn btn-default btn-lg" href="#" role="button">Conviertete en conductor</a></p>
@@ -99,21 +201,24 @@ maximum-scale=1">
         </div>
       </div>
       <!-- seccion mapa -->
-      <div class="row background"> <!-- puedo usar un container para no usar offset a los laterales -->
+      <div id="mapa" class="row background"> <!-- puedo usar un container para no usar offset a los laterales -->
         <div class="col-md-5 col-md-offset-1">
           <h3>Tarifas</h3>
-          <p>Consulta las tarifas LabCar aquí</p>
+          <h4>Consulta las tarifas LabCar aquí</h4>
           <div id="buttons" class="input-group">
       <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-            <input type="text" class="form-control" placeholder="Ingrese su punto de partida" aria-describedby="basic-addon1">
-            <input type="text" class="form-control" placeholder="Ingrese su destino" aria-describedby="basic-addon1">
+            <input type="text" class="form-control hidden-xs" value="Ingrese su punto de partida" aria-describedby="basic-addon1">
+            <input type="text" class="form-control visible-xs" value="Insurgentes Centro, Cuauhtemoc, Ciudad de México" aria-describedby="basic-addon1">
+            <input type="text" class="form-control hidden-xs" value="Ingrese su destino" aria-describedby="basic-addon1">
+            <input type="text" class="form-control visible-xs" value="Carolina, Ciudad de los Deportes, Ciudad de México" aria-describedby="basic-addon1">
           </div>
           <div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default">¡TRAZAR RUTA!</button>
           </div>
         </div>
-        <div class="col-md-5">
+        <div id="map" class="col-md-5" style="width:400px; height:400px">
           <img src="" alt="GoogleMaps">
+          <p>Hay que permitir la ubicación para que aparezca el mapa</p>
         </div>
       </div>
       <!-- footer -->
@@ -121,16 +226,58 @@ maximum-scale=1">
           <div class="col-md-10 col-md-offset-1">
             <img class="logotipo-footer" src="assets/images/logoBlanco.png" alt="logotipo">
             <hr>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-
+            <div class="row">
+              <div class="col-md-3 col-md-offset-3 col-sm-2 col-xs-2">
+                <ul class="list-group list-things">
+                  <li class="list-group-item">Viaja</li>
+                  <li class="list-group-item">Conduce</li>
+                  <li class="list-group-item">Ciudades</li>
+                  <li class="list-group-item">Ciudades</li>
+                  <li class="list-group-item">Entregas</li>
+                  <li class="list-group-item">Cómo funciona?</li>
+                  <li class="list-group-item">Países</li>
+                  <li class="list-group-item">Seguridad</li>
+                </ul>
+              </div>
+              <div class="col-md-3 hidden-xs">
+                <ul class="list-group list-things hidden-sm">
+                  <li class="list-group-item">Oportunidades</li>
+                  <li class="list-group-item">Nuestra historia</li>
+                  <li class="list-group-item">API de LabCar</li>
+                  <li class="list-group-item">Eventos</li>
+                  <li class="list-group-item">Desarrolladores</li>
+                  <li class="list-group-item">Servicios</li>
+                  <li class="list-group-item">Laboratoria</li>
+                  <li class="list-group-item">Coders</li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-4">
+                <!-- iconos -->
+                <img src="assets/images/appstore.png" alt="app-store">
+                <img src="assets/images/enBadgeWebGeneric.png" alt="google-store">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 col-sm-12 col-xs-12">
+                <!-- iconos más pequeños -->
+                <span class="icons">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  <i class="fa fa-apple" aria-hidden="true"></i>
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <p>2017 LabCar technologies Inc.</p>
+              </div>
+            </div>
           </div>
         </div>
     </div>
-
-
     <!-- cdn jquery -->
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -138,5 +285,9 @@ maximum-scale=1">
   crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwULDbIHPLLtEYyXiuuKjmIzt722oF4dw&callback=initMap">
+    </script>
   </body>
 </html>

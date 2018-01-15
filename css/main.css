@@ -1,9 +1,48 @@
-body > nav{
-  margin-bottom: 0.7em;
+html {
+  font-size: 14px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 28px;
+  }
+}
+
+body > nav > div{
   background-color: white;
   border: none;
 }
 
+#myNavbar{
+  background-color: white;
+  border: none;
+}
+
+/* modal login */
+.fa-user-circle-o{
+  font-size: 73px;
+  margin-left: 43%;
+}
+
+#myNavbar > ul > li:nth-child(3) > button{
+  border: none;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+
+/* seccion formulario registro  */
 .image{
   background-image: url("../assets/images/taxi.jpg");
   background-position: 100% 92.5%;
@@ -14,8 +53,6 @@ body > nav{
   background-repeat: no-repeat;
 }
 
-
-/* seccion formulario registro  */
 /* .row{
   margin: 0;
 } */
@@ -25,41 +62,103 @@ body > div:nth-child(2) > div > div > div{
 }
 
 #first-jumbotron{
-  margin-top: 6.25em;
+  margin-top: 3.25em;
   background-color: #f7b617;
   color: white;
   border-radius: 0;
 }
 
 #first-jumbotron img{
-  width: 11vh;
+  width: 14vh;
 }
 
 #first-jumbotron h2{
-  margin: 0;
+  margin: 0 0 1em 0;
 }
 
-.jumbotron #hr::before{
-  content: "o bien";
-}
-
-.jumbotron #hr::after{
-  content: " ";
+#first-jumbotron hr{
+  text-align: center;
 }
 
 .jumbotron p{
+  margin: 0 0 0.8em 0;
+}
+
+#first-jumbotron > p:nth-child(5) > a{
+  margin-top: 0.5em;
+  border: none;
+}
+
+#first-jumbotron > h2.visible-xs{
   margin: 0;
 }
+
+#first-jumbotron > p.visible-xs{
+  font-size: 2em;
+}
+
+#first-jumbotron > div.btn-group > button{
+  margin-top: -1.5em;
+}
+
+/* modal registrate */
+.color{
+  color: black;
+}
+
+.back{
+  background-color: lightgrey;
+}
+
+
+/* seccion celular */
 
 .background{
   background-color: #f7b617;
   height: 70vh;
+  color: white;
 }
 
-.back{
+.border-white{
   border: 1px solid white;
   height: 60vh;
   margin: 5vh 0;
+}
+
+#cellphone > div > div > div.col-md-5.col-md-offset-1 > img{
+  height: 50vh;
+  margin-top: 1.2em;
+}
+
+#cellphone > div > div > div.col-md-4 > h3{
+  font-size: 2em;
+  margin: 2em 0 0.8em 0;
+}
+
+#cellphone > div > div > div.col-md-4 > p:nth-child(2){
+  margin: 1.5em 0;
+  font-size: 1.3em;
+}
+
+#cellphone > div > div > div.col-md-4 > p:nth-child(3){
+  font-size: 1.3em;
+}
+
+/* seccion conduce cuando quieras */
+#second-jumbotron{
+  opacity: 0.5;
+  background-color: black;
+  border-radius: 0;
+  color: white;
+}
+
+#second-jumbotron > p:nth-child(3) > a{
+  background-color: #ffc107;
+  border: none;
+}
+
+#drive > div > div > div{
+  padding-right: 0;
 }
 
 .background-image{
@@ -68,18 +167,6 @@ body > div:nth-child(2) > div > div > div{
   background-size: cover;
   background-repeat: no-repeat;
   height: 80vh;
-}
-
-/* seccion celular */
-#cellphone > div > div > div.col-md-5.col-md-offset-1 > img{
-  height: 52vh;
-  margin-top: 1.2em;
-}
-
-/* seccion conduce cuando quieras */
-#drive > div > div > div > div{
-  opacity: 0.5;
-  background-color: black;
 }
 
 /* seccion tarifas */
@@ -94,6 +181,8 @@ body > div:nth-child(5) > div.col-md-5.col-md-offset-1 > p{
   font-size: 1em;
 }
 
+
+
 #buttons{
   margin-top: 1em;
 }
@@ -102,12 +191,60 @@ body > div:nth-child(5) > div.col-md-5.col-md-offset-1 > p{
   margin-top: 1.5em;
 }
 
+#buttons > input:nth-child(1),
+#buttons > input:nth-child(2),
+#buttons > input:nth-child(3),
+#buttons > input:nth-child(4){
+  border-radius: 8px;
+  background-color: #f7b617;
+  border: 1px solid white;
+  color: white;
+}
+
+#mapa > div.col-md-5.col-md-offset-1 > div.btn-group > button{
+  margin-top: 2em;
+}
+
+#mapa > div.col-md-5.col-md-offset-1 > h3{
+  font-size: 2em;
+  margin-top: 2.5em;
+}
+
 /* footer */
 .back-grey{
   background-color: #2b2b2b;
-  height: 300px;
+  height: 100vh;
 }
 
-body > div.row.back-grey > div > img{
+body > div > div.row.back-grey > div > img{
   margin-top: 5em;
+}
+
+.list-things > li{
+  background-color: #2b2b2b;
+  border: none;
+  color: white;
+}
+
+body > div > div.row.back-grey > div > div:nth-child(3) > div:nth-child(2){
+  padding-left: 0;
+  margin-left: -1em;
+}
+
+.icons{
+  color: white;
+}
+
+body > div > div.row.back-grey > div > div:nth-child(6) > div > p{
+  color: white;
+}
+
+body > div > div.row.back-grey > div > div:nth-child(3) > div:nth-child(3) > img:nth-child(1){
+  margin-top: 15em;
+  width: 26vh;
+}
+
+body > div > div.row.back-grey > div > div:nth-child(3) > div:nth-child(3) > img:nth-child(2){
+  margin-top: 1em;
+  width: 26vh;
 }
