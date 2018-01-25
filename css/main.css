@@ -1,4 +1,4 @@
-html {
+/* html {
   font-size: 14px;
 }
 
@@ -18,16 +18,18 @@ html {
   html {
     font-size: 28px;
   }
-}
+} */
 
 body > nav > div{
   background-color: white;
   border: none;
+  margin: 0;
 }
 
 #myNavbar{
   background-color: white;
   border: none;
+  margin-bottom: 0;
 }
 
 /* modal login */
@@ -63,6 +65,7 @@ body > div:nth-child(2) > div > div > div{
 
 #first-jumbotron{
   margin-top: 3.25em;
+  margin-bottom: 0;
   background-color: #f7b617;
   color: white;
   border-radius: 0;
@@ -126,7 +129,7 @@ body > div:nth-child(2) > div > div > div{
 }
 
 #cellphone > div > div > div.col-md-5.col-md-offset-1 > img{
-  height: 45vh;
+  height: 47vh;
   margin-top: 1.2em;
 }
 
