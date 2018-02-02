@@ -220,6 +220,28 @@ body > div:nth-child(5) > div.col-md-5.col-md-offset-1 > p{
   margin-top: 2.5em;
 }
 
+#map{
+  border: 2px solid white;
+  margin-top: 2em;
+  width: 400px;
+  height: 400px;
+}
+
+#map > img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5em;
+  width: 350px;
+  height: 350px;
+}
+
+.bg-color{
+  background-color: yellow;
+  height: 20vh;
+}
+
+
 /* footer */
 .back-grey{
   background-color: #2b2b2b;
